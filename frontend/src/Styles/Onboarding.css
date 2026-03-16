@@ -1,0 +1,70 @@
+/* Unified Input Style (Matches the City/Number inputs) */
+.profile-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(10, 25, 47, 0.5); /* Deep navy inset */
+  border: 1px solid rgba(253, 245, 230, 0.1);
+  border-radius: 12px;
+  color: var(--sandel-yellow);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Specific Focus State */
+.profile-input:focus {
+  border-color: var(--baby-yellow);
+  background: rgba(10, 25, 47, 0.8);
+  box-shadow: 0 0 10px rgba(254, 249, 195, 0.1);
+}
+
+/* Dropdown specific overrides to remove browser styling */
+select.profile-input {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fdf5e6' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 20px;
+}
+
+/* Textarea specific overrides */
+.profile-textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* Mini inputs for the time slots */
+.time-mini {
+  padding: 8px 12px;
+  width: 120px;
+  font-size: 0.85rem;
+}
+
+/* Form Section Layouts */
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+/* Section Label with StudySync accent */
+.section-label {
+  color: var(--baby-yellow);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 5px;
+  border-left: 3px solid var(--baby-yellow);
+  padding-left: 12px;
+}

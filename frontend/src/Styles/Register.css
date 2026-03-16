@@ -1,0 +1,62 @@
+/* Specific entrance for the Register Card */
+.register-card {
+  animation: slideInRight 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Enhancing the Registration Button */
+.register-btn {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, var(--baby-yellow), #fff59d);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle "shimmer" effect for the primary action button */
+.register-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.register-btn:hover::after {
+  left: 120%;
+  opacity: 1;
+  transition: all 0.7s inset;
+}
+
+/* Ensure spacing remains consistent even with more inputs */
+.auth-form .form-group {
+  position: relative;
+}
+
+/* Smooth Focus Transition */
+.auth-form input:focus {
+  border-color: var(--baby-yellow);
+  box-shadow: 0 0 12px rgba(254, 249, 195, 0.15);
+}
+
+/* Mobile responsive tweak for longer forms */
+@media (max-height: 700px) {
+  .glass-card {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  .brand-title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+}

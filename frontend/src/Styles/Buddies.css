@@ -1,0 +1,129 @@
+/* Dashboard Layout */
+.dashboard-container {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease-out;
+  background-color:#cbd8ea;
+}
+
+.header-section {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.brand-title{
+color:rgba(23, 42, 69, 0.7);
+}
+
+.accent-line {
+  width:180px;
+  height: 4px;
+  background:rgba(17, 43, 78, 0.7);
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+/* Grid System */
+.buddies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Buddy Card */
+.buddy-card {
+  background: rgba(23, 42, 69, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(253, 245, 230, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.buddy-card:hover {
+  transform: translateY(-8px);
+  background: rgba(23, 42, 69, 0.9);
+  border-color: var(--baby-yellow);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Typography & Badges */
+.buddy-name {
+  color: var(--sandel-yellow);
+  font-size: 1.25rem;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+}
+
+.buddy-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.stat-badge {
+  background: rgba(254, 249, 195, 0.1);
+  color: var(--baby-yellow);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(254, 249, 195, 0.2);
+}
+
+/* Action Buttons */
+.buddy-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-chat {
+  flex: 2;
+  background: var(--baby-yellow);
+  color: var(--navy-deep);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-chat:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(254, 249, 195, 0.4);
+}
+
+.btn-remove {
+  flex: 1;
+  background: transparent;
+  color: #ff6b6b; /* Subtle red for delete */
+  border: 1px solid rgba(255, 107, 107, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-remove:hover {
+  background: rgba(255, 107, 107, 0.1);
+  border-color: #ff6b6b;
+}
+
+/* Empty State Styling */
+.empty-state {
+  padding: 60px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

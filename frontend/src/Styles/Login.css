@@ -1,0 +1,87 @@
+/* Reuse the .auth-container and .glass-card from the Welcome page */
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* 1. Input Styling */
+input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(10, 25, 47, 0.5); /* Darker inset for depth */
+  border: 1px solid rgba(253, 245, 230, 0.1);
+  border-radius: 12px;
+  color: var(--sandel-yellow);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  outline: none;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: rgba(136, 146, 176, 0.5);
+}
+
+/* Input Focus State - Subtle Glow */
+input:focus {
+  border-color: var(--baby-yellow);
+  background: rgba(10, 25, 47, 0.8);
+  box-shadow: 0 0 0 4px rgba(254, 249, 195, 0.1);
+  transform: scale(1.01);
+}
+
+/* 2. Login Button specific tweak */
+.login-btn {
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* 3. Status Message styling */
+.status-msg {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #ffab00; /* A warmer yellow/orange for alerts */
+  background: rgba(255, 171, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  animation: shake 0.4s ease-in-out;
+}
+
+/* 4. Footer & Links */
+.footer-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.text-link {
+  color: var(--baby-yellow);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  margin-left: 5px;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  opacity: 0.8;
+}
+
+/* Error Shake Animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
