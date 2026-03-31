@@ -1,5 +1,5 @@
 import {Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/LandingPage"
+import LandingPage from "./pages/LandingPage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
@@ -20,7 +20,7 @@ return (
 <Route path="/matches" element={<Matches />} />
 <Route path="/requests" element={<Requests/>}/>
 <Route path="/my-buddies" element={<Buddies/>} />
-<Route  path="/chat/:buddyId" element={<Chat/>}></Route>
+<Route  path="/chat/:buddyId" element={<Chat/>}/>
 </Routes>
   );
 }

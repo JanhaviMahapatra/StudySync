@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../Styles/Dashboard.css"
+import "../Styles/DashBoard.css"
 
 export default function Dashboard(){
  const navigate=useNavigate();
