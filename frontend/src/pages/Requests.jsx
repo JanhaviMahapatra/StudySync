@@ -7,10 +7,11 @@ const[requests,setRequests]=useState([]);
 const[loading,setLoading]=useState(true);
 
 const token=localStorage.getItem("token");
+const API = import.meta.env.VITE_API_URL;
 
 const fetchRequest=async ()=>{
 try{
-  const res=await axios.get("http://localhost:5000/api/buddy/requests",
+  const res=await axios.get(`${API}/api/buddy/requests`,
 {
   headers:{
     Authorization:`Bearer ${token}`,
@@ -30,7 +31,7 @@ fetchRequest();
 
 const handleAccept=async (requestId)=>{
 try{
-  await axios.put(`http://localhost:5000/api/buddy/accept/${requestId}`,{},
+  await axios.put(`${API}/api/buddy/accept/${requestId}`,{},
 {
   headers:{
     Authorization:`Bearer ${token}`,
@@ -46,7 +47,7 @@ alert(error.response?.data?.message || "Error accepting");
 
 const handleReject=async (requestId)=>{
 try{
-  await axios.put(`http://localhost:5000/api/buddy/reject/${requestId}`,{},
+  await axios.put(`${API}/api/buddy/reject/${requestId}`,{},
 {
   headers:{
     Authorization:`Bearer ${token}`,

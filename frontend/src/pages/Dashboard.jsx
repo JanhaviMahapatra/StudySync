@@ -7,10 +7,11 @@ export default function Dashboard(){
  const navigate=useNavigate();
  const[data,setData]=useState("");
  const[msg,setMsg]=useState("");
+ const API = import.meta.env.VITE_API_URL;
  useEffect(()=>{
  const fetchMe=async ()=>{
  const token=localStorage.getItem("token");
- const res=await axios.get("http://localhost:5000/api/users/me",{
+ const res=await axios.get(`${API}/api/users/me`,{
   headers:{
   authorization:`Bearer ${token}`,
   },
@@ -42,7 +43,7 @@ return(
 
 {msg && <p className="status-msg">{msg}</p>}
 
-{/* Action Grid */}
+/* Action Grid */}
 <div className="action-grid">
 <button 
 className="action-tile primary-tile" 

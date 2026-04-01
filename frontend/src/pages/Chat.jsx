@@ -23,6 +23,8 @@ const [loading, setLoading] = useState(true);
 const [isTyping, setIsTyping] = useState(false);
 const [isOnline, setIsOnline] = useState(false);
 
+const API = import.meta.env.VITE_API_URL;
+
 /*Auto scroll dowm*/
 useEffect(()=>{
 bottomRef.current?.scrollIntoView(
@@ -147,7 +149,7 @@ return;
 try {
 
 const res = await axios.get(
-`http://localhost:5000/api/chat/${buddyId}`,
+`${API}/api/chat/${buddyId}`,
 {
 headers: {
 Authorization: `Bearer ${token}`,
@@ -197,7 +199,7 @@ if (isAIChat) {
 
 setIsTyping(true);
 const res = await axios.post(
-"http://localhost:5000/api/ai/chat",
+`${API}/api/ai/chat`,
 { message: userMessage },
 {
 headers: {
@@ -225,7 +227,7 @@ return;
 
 /* USER CHAT */
 await axios.post(
-"http://localhost:5000/api/chat/send",
+`${API}/api/chat/send`,
 {
 receiverId: buddyId,
 text: userMessage,

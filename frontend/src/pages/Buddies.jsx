@@ -9,10 +9,11 @@ const [buddies,setBuddies]=useState([]);
 const [loading,setLoading]=useState(true);
 
 const token=localStorage.getItem("token");
+const API = import.meta.env.VITE_API_URL;
 
 const fetchBuddies=async ()=>{
 try{
-const res=await axios.get("http://localhost:5000/api/buddy/my-buddies",
+const res=await axios.get(`${API}/api/buddy/my-buddies`,
 {
 headers:{
 Authorization:`Bearer ${token}`,
@@ -32,7 +33,7 @@ fetchBuddies();
 
 const handleRemove=async (userId)=>{
 try{
-await axios.delete(`http://localhost:5000/api/buddy/remove/${userId}`,
+await axios.delete(`${API}/api/buddy/remove/${userId}`,
 {
 headers:{
 Authorization:`Bearer ${token}`,

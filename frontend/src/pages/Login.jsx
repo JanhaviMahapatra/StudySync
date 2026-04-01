@@ -12,6 +12,7 @@ password:"",
 });
 
 const[msg,setMsg]=useState("");
+const API = import.meta.env.VITE_API_URL;
 
  const handleChange=(e)=>{
   setForm((prev)=>({...prev,[e.target.name]:e.target.value}));
@@ -21,13 +22,13 @@ const[msg,setMsg]=useState("");
  e.preventDefault();
  setMsg("");
  try{
- const res=await axios.post("http://localhost:5000/api/auth/login",form);
+ const res=await axios.post(`${API}/api/auth/login`,form);
  const token = res.data.token;
  localStorage.setItem("token",token);
  localStorage.setItem("userId", res.data.user.id);
  
 const me = await axios.get(
-"http://localhost:5000/api/users/me",
+`${API}/api/users/me`,
 {
 headers: {
 Authorization: `Bearer ${token}`,

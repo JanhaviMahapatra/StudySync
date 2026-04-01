@@ -6,6 +6,7 @@ export default function Matches() {
 const[matches, setMatches]=useState([]);
 const[loading, setLoading]=useState(true);
 const[sending, setSending]=useState(null);
+const API = import.meta.env.VITE_API_URL;
 
 useEffect(() => {
 const fetchMatches = async () => {
@@ -13,7 +14,7 @@ try {
 const token = localStorage.getItem("token");
 
 const res = await axios.get(
-"http://localhost:5000/api/match",
+`${API}/api/match`,
 {
 headers: {
 Authorization: `Bearer ${token}`,
@@ -36,7 +37,7 @@ const handleSendRequest=async (userId)=>{
 try{
 setSending(userId);
 const token=localStorage.getItem("token");
-await axios.post("http://localhost:5000/api/buddy/request",
+await axios.post(`${API}/api/buddy/request`,
 {toUserId:userId},
 {headers:{
 Authorization:`Bearer ${token}`,
