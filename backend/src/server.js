@@ -13,14 +13,18 @@ connectDB();
 
 const server=http.createServer(app);
 
-const io=new Server(server,
-{
-cors:{
-origin:process.env.CLIENT_URL,
-methods:["GET","POST"],
+const io = new Server(server, {
+cors: {
+origin: (origin, callback) => {
+if (!origin || origin.includes("vercel.app")) {
+callback(null, true);
+} else {
+callback(new Error("Not allowed by CORS"));
+}
 },
+methods: ["GET", "POST"]
+}
 });
-
 app.set("io",io);
 
 /* The map where all of our online coming users will be stored with their id as key and socket.id as value */
