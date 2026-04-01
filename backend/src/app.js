@@ -11,14 +11,9 @@ const aiRoutes=require("./routes/ai.routes");
 const app=express();
 
 app.use(cors({
-origin: (origin, callback) => {
-if (!origin || origin.includes("vercel.app")) {
-callback(null, true);
-} else {
-callback(new Error("Not allowed by CORS"));
-}
-},
-credentials: true
+  origin: "https://study-sync-e6tv0gi3c-janhavis-projects-3126d697.vercel.app",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
 }));
 
 app.use(express.json());

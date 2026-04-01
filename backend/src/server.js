@@ -15,14 +15,9 @@ const server=http.createServer(app);
 
 const io = new Server(server, {
 cors: {
-origin: (origin, callback) => {
-if (!origin || origin.includes("vercel.app")) {
-callback(null, true);
-} else {
-callback(new Error("Not allowed by CORS"));
-}
-},
-methods: ["GET", "POST"]
+origin: "https://study-sync-e6tv0gi3c-janhavis-projects-3126d697.vercel.app",
+methods: ["GET", "POST"],
+credentials: true
 }
 });
 app.set("io",io);
