@@ -43,7 +43,7 @@ return(
 
 {msg && <p className="status-msg">{msg}</p>}
 
-/* Action Grid */}
+{/* Action Grid */}
 <div className="action-grid">
 <button 
 className="action-tile primary-tile" 
