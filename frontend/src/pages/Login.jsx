@@ -2,6 +2,7 @@ import {useState} from "react";
 import axios from "axios";
 import {Link,useNavigate} from "react-router-dom";
 import "../Styles/Login.css"
+import logo from "../assets/StudySync-Logo.png";
 
 export default function Login(){
 const navigate=useNavigate();
@@ -49,7 +50,7 @@ navigate("/onboarding");
 <div className="auth-container">
 <div className="glass-card">
 <div className="logo-wrapper">
-<img src="../images/StudySync-Logo.png" alt="StudySync Logo" className="brand-logo" />
+<img src={logo} alt="StudySync Logo" className="brand-logo" />
 </div>
 
 <h2 className="brand-title">Welcome Back</h2>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate,Link } from "react-router-dom";
 import "../Styles/Register.css"
+import logo from "../assets/StudySync-Logo.png";
 
 export default function Register() {
 const [form, setForm] = useState({
@@ -38,7 +39,7 @@ return (
 <div className="glass-card register-card">
 {/* LOGO AREA */}
 <div className="logo-wrapper">
-<img src="../images/StudySync-Logo.png" alt="StudySync Logo" className="brand-logo" />
+<img src={logo} alt="StudySync Logo" className="brand-logo" />
 </div>
 
 <h2 className="brand-title">Join StudySync</h2>

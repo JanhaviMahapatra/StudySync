@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../Styles/LandingPage.css"
+import logo from "../assets/StudySync-Logo.png";
 
 export default function Home() {
 return (
@@ -7,7 +8,7 @@ return (
   <div className="glass-card">
     {/* LOGO PLACEMENT */}
     <div className="logo-wrapper">
-      <img src="../images/StudySync-Logo.png" alt="StudySync Logo" className="brand-logo" />
+      <img src={logo} alt="StudySync Logo" className="brand-logo" />
     </div>
 
     <h2 className="brand-title">Welcome to StudySync</h2>
