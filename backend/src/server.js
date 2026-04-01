@@ -16,7 +16,7 @@ const server=http.createServer(app);
 const io=new Server(server,
 {
 cors:{
-origin:process.env.CLIENT_URL,
+origin:"https://study-sync-4ft8te2y7-janhavis-projects-3126d697.vercel.app",
 methods:["GET","POST"],
 },
 });
