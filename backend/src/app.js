@@ -11,7 +11,7 @@ const aiRoutes=require("./routes/ai.routes");
 const app=express();
 
 app.use(cors({
-  origin: "https://study-sync-e6tv0gi3c-janhavis-projects-3126d697.vercel.app",
+  origin: "https://study-sync-cl9hscrxa-janhavis-projects-3126d697.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
 }));
