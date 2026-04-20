@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import "../Styles/Onboarding.css"
 
 export default function Onboarding(){
 const navigate=useNavigate();
@@ -104,8 +105,13 @@ navigate("/me");
 alert(error.response?.data?.message || "Error saving profile");
 }
 };
-return(
+
+return (
 <div className="auth-container profile-page">
+{/* Floating background elements for SaaS depth */}
+<div className="orb orb-1"></div>
+<div className="orb orb-2"></div>
+
 <div className="glass-card wide-card">
 <div className="header-section">
 <h2 className="brand-title">Complete Your Study Profile</h2>
@@ -113,19 +119,33 @@ return(
 </div>
 
 <form onSubmit={handleSubmit} className="profile-form">
+
 {/* SECTION 1: GENERAL INFO */}
 <div className="form-section">
 <h3 className="section-label">General Information</h3>
 <textarea
 name="bio"
-placeholder="Tell us about your study journey..."
-className="profile-input profile-textarea" 
+placeholder="Tell us about your study journey (e.g., 'I'm a self-taught dev looking for accountability')..."
+className="profile-input profile-textarea"
 value={form.bio}
 onChange={handleChange}
 />
 <div className="input-row">
-<input className="profile-input" name="city" placeholder="City (optional)" value={form.city} onChange={handleChange} />
-<input className="profile-input" type="number" name="dailyStudyHours" placeholder="Daily Hours" value={form.dailyStudyHours} onChange={handleChange} />
+<input 
+className="profile-input" 
+name="city" 
+placeholder="City (optional)" 
+value={form.city} 
+onChange={handleChange} 
+/>
+<input 
+className="profile-input" 
+type="number" 
+name="dailyStudyHours" 
+placeholder="Daily Hours (e.g. 4)" 
+value={form.dailyStudyHours} 
+onChange={handleChange} 
+/>
 </div>
 </div>
 
@@ -161,9 +181,13 @@ onChange={handleChange}
 <h3 className="section-label">Expertise & Interests</h3>
 <div className="topics-grid">
 {fixedTopics.map((topic) => (
-<label key={topic} className={`topic-chip ${form.topics.includes(topic) ? 'active' : ''}`}>
+<label 
+key={topic} 
+className={`topic-chip ${form.topics.includes(topic) ? 'active' : ''}`}
+>
 <input
 type="checkbox"
+hidden
 checked={form.topics.includes(topic)}
 onChange={() => handleTopicChange(topic)}
 />
@@ -174,7 +198,7 @@ onChange={() => handleTopicChange(topic)}
 <input
 name="customTopic"
 placeholder="Add custom topic (e.g. Quantum Physics)"
-className="profile-input" /* Unified class */
+className="profile-input custom-topic-bar"
 value={form.customTopic}
 onChange={handleChange}
 />
@@ -186,7 +210,7 @@ onChange={handleChange}
 <div className="availability-grid">
 {Object.keys(form.availability).map((day) => (
 <div key={day} className="day-row">
-<span className="day-name">{day}</span>
+<span className="day-name">{day.substring(0, 3)}</span>
 <div className="time-inputs">
 <input
 type="time"
@@ -207,7 +231,9 @@ onChange={(e) => handleAvailabilityChange(day, "to", e.target.value)}
 </div>
 </div>
 
-<button type="submit" className="btn-primary submit-profile">Save Profile</button>
+<button type="submit" className="btn-primary submit-profile">
+Save Profile
+</button>
 </form>
 </div>
 </div>
