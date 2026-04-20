@@ -15,7 +15,7 @@ const server=http.createServer(app);
 
 const io = new Server(server, {
 cors: {
-origin: "https://study-sync-e6tv0gi3c-janhavis-projects-3126d697.vercel.app",
+origin: "https://study-sync-cl9hscrxa-janhavis-projects-3126d697.vercel.app",
 methods: ["GET", "POST"],
 credentials: true
 }
