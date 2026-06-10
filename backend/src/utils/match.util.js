@@ -14,7 +14,7 @@ if(userA.dailyStudyHours&&userB.dailyStudyHours&&Math.abs(userA.dailyStudyHours-
   score+=10;
   reasons.push(`Same daily study hours (${userA.dailyStudyHours})`);
 }
-
+// 
 if(userA.topics.length&&userA.topics.length){
 const commonTopics=userA.topics.filter((topic)=>{
   userB.topics.includes(topic);

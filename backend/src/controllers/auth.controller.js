@@ -4,7 +4,7 @@ const bcrypt=require("bcryptjs");
 
 exports.register=async (req,res)=>{
 try{
-  const {name,email,password}=req.body;
+const {name,email,password}=req.body;
 if(!name||!email||!password){
 return res.status(400).json({message:"All fields are required"});
 }
@@ -30,14 +30,14 @@ email:user.email
 },
 });
 } catch(error){
-  console.log("Register Error",error.message);
-  res.status(500).json({message:"Server Error"});
+console.log("Register Error",error.message);
+res.status(500).json({message:"Server Error"});
 }
 }
 
 exports.login=async(req,res)=>{
 try{
- const { email, password } = req.body;
+const { email, password } = req.body;
 if (!email || !password) {
 return res.status(400).json({ message: "All fields are required" });
 }
@@ -93,12 +93,12 @@ if (level) user.level = level;
 if (preferredStudyTime) user.preferredStudyTime = preferredStudyTime;
 if (goal) user.goal = goal;
 if (dailyStudyHours!==undefined){
-  if(dailyStudyHours<=0){
-    res.status(400).json({
-   message:"Daily Study hours must be greater than 0",
-    });
-  }
-  user.dailyStudyHours=dailyStudyHours;
+if(dailyStudyHours<=0){
+res.status(400).json({
+message:"Daily Study hours must be greater than 0",
+});
+}
+user.dailyStudyHours=dailyStudyHours;
 };
 if (topics) user.topics = topics;
 if (availability) user.availability = availability;
@@ -110,6 +110,6 @@ message:"Profile updated successfully",
 user,
 });
 }catch(error){
-  res.status(500).json({message:"Server Error"});
+res.status(500).json({message:"Server Error"});
 }
 };

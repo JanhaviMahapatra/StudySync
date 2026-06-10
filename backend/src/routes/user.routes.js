@@ -26,4 +26,5 @@ res.status(500).json({message:"Server error"})
 
 
 router.put("/profile",protect,updateProfile);
+
 module.exports=router;
